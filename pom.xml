@@ -851,8 +851,8 @@
     <bndlib.version>4.1.0</bndlib.version>
     <!-- Properties for maven-compiler-plugin -->
     <maven.compiler.compilerVersion>1.6</maven.compiler.compilerVersion>
-    <maven.compiler.source>11</maven.compiler.source>
-    <maven.compiler.target>11</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
     <maven.compiler.fork>true</maven.compiler.fork>
     <!-- Properties for maven-javadoc-plugin -->
     <author>false</author>
