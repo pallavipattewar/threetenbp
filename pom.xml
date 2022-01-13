@@ -850,7 +850,7 @@
     <nexus-staging-maven-plugin.version>1.6.8</nexus-staging-maven-plugin.version>
     <bndlib.version>4.1.0</bndlib.version>
     <!-- Properties for maven-compiler-plugin -->
-    <maven.compiler.compilerVersion>1.6</maven.compiler.compilerVersion>
+    <maven.compiler.compilerVersion>1.7</maven.compiler.compilerVersion>
     <maven.compiler.source>1.7</maven.compiler.source>
     <maven.compiler.target>1.7</maven.compiler.target>
     <maven.compiler.fork>true</maven.compiler.fork>
