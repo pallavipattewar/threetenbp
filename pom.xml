@@ -820,7 +820,7 @@
   <!-- ==================================================================== -->
   <properties>
     <!-- Plugin version numbers -->
-    <build-helper-maven-plugin.version>1.12</build-helper-maven-plugin.version>
+    <build-helper-maven-plugin.version>3.0.0</build-helper-maven-plugin.version>
     <maven-assembly-plugin.version>3.1.0</maven-assembly-plugin.version>
     <maven-bundle-plugin.version>4.1.0</maven-bundle-plugin.version>
     <maven-changes-plugin.version>2.12.1</maven-changes-plugin.version>
