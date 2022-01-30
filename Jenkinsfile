@@ -12,8 +12,8 @@ pipeline {
                 stage('Testing Stage') {
 		        steps {
 		          	script {
-				        //bat "mvn test"
-					bat "mvn test -Dtest="org.threeten.bp.TestTrial%**""                  }
+				        bat "mvn test"
+					//bat "mvn test -Dtest="org.threeten.bp.TestTrial%**""                  }
 				post{
                           always{
                               	junit "**/target/surefire-reports/TEST-org.joda.threeten.bp.Test**.xml"
