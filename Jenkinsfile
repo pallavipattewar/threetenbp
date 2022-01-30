@@ -18,6 +18,7 @@ pipeline {
                           always{
                               	junit "**/target/surefire-reports/TEST-org.joda.threeten.bp.Test**.xml"
                            }
+				}
             }
         }
        }
