@@ -14,6 +14,10 @@ pipeline {
 		          	script {
 				        bat "mvn test"
                   }
+				post{
+                          always{
+                              	junit "**/target/surefire-reports/TEST-org.joda.threeten.bp.Test**.xml"
+                           }
             }
         }
        }
