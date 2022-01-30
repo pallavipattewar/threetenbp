@@ -16,7 +16,7 @@ pipeline {
 					//bat "mvn test -Dtest="org.threeten.bp.TestTrial%**""                  }
 				post{
                           always{
-                              	junit "**/target/surefire-reports/TEST-org.joda.threeten.bp.Test**.xml"
+                              	junit "**/target/surefire-reports/TEST-org.threeten.bp.Test**.xml"
                            }
 				}
             }
