@@ -13,7 +13,17 @@ pipeline {
 		steps {
 			script {
 				//def count = demo()
-				bat "mvn test"
+				def count = 4
+				
+				if(count == 0) 
+				{
+					bat "mvn test -Dtest="org.threeten.bp.TestTrial""
+                   		 }
+				else
+				{
+					bat "mvn test -Dtest=!"org.threeten.bp.TestTrial""
+					
+				}
 			}
 			
 		}
