@@ -10,20 +10,22 @@ pipeline {
             }
         }
                 stage('Testing Stage') {
-		        steps {
-		          	script {
-				        bat "mvn test"
-					//bat "mvn test -Dtest="org.threeten.bp.TestTrial%**""                  }
-				post{
+		steps {
+			script {
+				//def count = demo()
+				bat "mvn test"
+			}
+			
+		}
+		post{
                           always{
-                              	//junit "**/target/surefire-reports/TEST-org.threeten.bp.Test**.xml"
+                              	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
 				  junit "**/target/surefire-reports/TEST-TestSuite.xml"
-                           }
-				}
-            }
-        }
-       }
-     }
-        
-
+				//log()
+                        
+                                }
+                     }
+	}
+    }
 }
+
