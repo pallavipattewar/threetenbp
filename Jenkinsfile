@@ -30,25 +30,13 @@ pipeline {
 			
 		}
 		post{
-			int count = 2
-			if(count == 0 )
-			{
-                          always{
-                              	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
-				  junit "**/target/surefire-reports/TEST-TestSuite.xml"
-				//log()
-                        
-                                }
-			}
-			else
-			{
+			
                           always{
                               	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
 				  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-				                      
-                                }
-			}
-                     }
+				//log()
+                        
+                       }
 	}
     }
 }
