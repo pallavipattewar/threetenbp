@@ -13,29 +13,41 @@ pipeline {
 		steps {
 			script {
 				//def count = demo()
-				int count = 0
+				int count = 2
 				
 				if(count == 0) 
 				{
 					//bat "mvn test -Dtest="org.threeten.bp.TestTrial""
-					bat "mvn test -Dtest=TestTrial"
+					bat "mvn test -Dtest=!TestTrial"
                    		 }
 				else
 				{
 					//bat "mvn test -Dtest=!"org.threeten.bp.TestTrial""
-					bat "mvn test -Dtest=!TestTrial"
+					bat "mvn test -Dtest=TestTrial"
 					
 				}
 			}
 			
 		}
 		post{
+			int count = 2
+			if(count == 0 )
+			{
                           always{
                               	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
 				  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				//log()
                         
                                 }
+			}
+			else
+			{
+                          always{
+                              	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
+				  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+				                      
+                                }
+			}
                      }
 	}
     }
