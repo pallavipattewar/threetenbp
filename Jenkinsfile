@@ -13,7 +13,7 @@ pipeline {
 		steps {
 			script {
 				//def count = demo()
-				int count = 0
+				int count = 4
 				
 				if(count == 0) 
 				{
