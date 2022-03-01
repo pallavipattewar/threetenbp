@@ -9,10 +9,11 @@ pipeline {
                   }
             }
         }
+	    int count = demo()
                 stage('Testing Stage') {
 		steps {
 			script {
-				int count = demo()
+				//int count = demo()
 				//int count = 0
 				
 				if(count == 0) 
