@@ -40,7 +40,7 @@ pipeline {
 			
 			success  {
 				script {
-				int count = demo()
+				//int count = demo()
 				if(count == 0) 
 				{
 					junit "**/target/surefire-reports/TEST-TestSuite.xml"
@@ -63,7 +63,7 @@ pipeline {
 def log(){
 	
 	def inputFile
-	int count = demo()
+	//int count = demo()
 				if(count == 0) 
 				{
 					//junit "**/target/surefire-reports/TEST-org.threeten.bp.TEST-TestSuite.xml"
