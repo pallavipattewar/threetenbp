@@ -38,7 +38,8 @@ pipeline {
                         
                        //}
 			
-			script {
+			success  {
+				script {
 				def count = demo()
 				if(count == 0) 
 				{
@@ -50,6 +51,7 @@ pipeline {
 					junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 					log()
 					
+				}
 				}
 			}
 	}
