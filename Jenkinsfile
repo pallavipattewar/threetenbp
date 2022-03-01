@@ -18,7 +18,7 @@ pipeline {
 				if(count == 0) 
 				{
 					//bat "mvn test -Dtest="org.threeten.bp.TestTrial""
-					bat "mvn test -Dtest=TestTrial"
+					bat "mvn test -Dtest=!TestTrial"
                    		 }
 				else
 				{
