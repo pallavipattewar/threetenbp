@@ -31,12 +31,27 @@ pipeline {
 		}
 		post{
 			
-                          always{
+                          //always{
                               	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
-				  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-				log()
+			//	  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+			//	log()
                         
-                       }
+                       //}
+			
+			script {
+				def count = demo()
+				if(count == 0) 
+				{
+					junit "**/target/surefire-reports/TEST-org.threeten.bp.TEST-TestSuite.xml"
+					log()
+                   		 }
+				else
+				{
+					junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					log()
+					
+				}
+			}
 	}
     }
 }
