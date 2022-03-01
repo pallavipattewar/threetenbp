@@ -62,7 +62,24 @@ pipeline {
 
 def log(){
 	
-    def inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+	def inputFile
+	def count = demo()
+				if(count == 0) 
+				{
+					//junit "**/target/surefire-reports/TEST-org.threeten.bp.TEST-TestSuite.xml"
+					inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-TestSuite.xml")
+					//log()
+                   		 }
+				else
+				{
+					 inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+					//junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					//log()
+					
+				}
+				}
+	
+  //  def inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
     def XMLDATA  = new XmlParser().parse(inputFile)
     if(!inputFile.exists())
     {
