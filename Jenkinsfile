@@ -43,7 +43,7 @@ pipeline {
 				def count = demo()
 				if(count == 0) 
 				{
-					junit "**/target/surefire-reports/TEST-org.threeten.bp.TEST-TestSuite.xml"
+					junit "**/target/surefire-reports/TEST-TestSuite.xml"
 					log()
                    		 }
 				else
