@@ -45,7 +45,7 @@ pipeline {
 
 def log(){
 	
-    def inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml"")
+    def inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
     def XMLDATA  = new XmlParser().parse(inputFile)
     if(!inputFile.exists())
     {
