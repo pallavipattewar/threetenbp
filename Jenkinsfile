@@ -1,4 +1,4 @@
-int count = demo();
+int count = demo()
 pipeline {
     agent any
     stages {
