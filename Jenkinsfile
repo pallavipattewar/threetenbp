@@ -41,7 +41,7 @@ pipeline {
 			
 			success  {
 				script {
-				//int count = demo()
+				count = 0
 				if(count == 0) 
 				{
 					always{
