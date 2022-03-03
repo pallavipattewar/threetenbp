@@ -1,4 +1,4 @@
-//int count
+int count
 pipeline {
     agent any
     stages {
@@ -12,7 +12,7 @@ pipeline {
 	        stage('Testing Stage') {
 		steps {
 			script {
-				int count = demo()
+				count = demo()
 				println "count in script "+count
 				//int count = 0
 				
@@ -41,7 +41,7 @@ pipeline {
 			
 			success  {
 				script {
-				int count = demo()
+				//int count = demo()
 				if(count == 0) 
 				{
 					always{
