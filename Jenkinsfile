@@ -1,4 +1,4 @@
-int count
+//int count
 pipeline {
     agent any
     stages {
@@ -12,7 +12,7 @@ pipeline {
 	        stage('Testing Stage') {
 		steps {
 			script {
-				count = demo()
+				int count = demo()
 				println "count in script "+count
 				//int count = 0
 				
@@ -50,18 +50,18 @@ def log(){
 	
 	def inputFile
 	//int count = demo()
-				if(count == 0) 
-				{
+				//if(count == 0) 
+				//{
 					//junit "**/target/surefire-reports/TEST-org.threeten.bp.TEST-TestSuite.xml"
 					inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-TestSuite.xml")
 					println "count in log "+count
-                   		 }
-				else
-				{
-					 inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
-					println "count in log "+count
+                   		// }
+				//else
+				//{
+				//	 inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+				//	println "count in log "+count
 					
-				}
+				//}
 				
 	
   //  def inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
