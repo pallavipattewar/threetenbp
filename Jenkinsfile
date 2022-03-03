@@ -33,7 +33,7 @@ pipeline {
 		}
 		post{
 			
-                          //always{
+                          always{
                               	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
 			//	  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 			//	log()
@@ -42,7 +42,7 @@ pipeline {
 			
 			success  {
 				script {
-				count = demo()
+				//count = demo()
 				if(count == 0) 
 				{
 					junit "**/target/surefire-reports/TEST-TestSuite.xml"
@@ -58,6 +58,7 @@ pipeline {
 				}
 				}
 			}
+			  }
 	}
     }
 }
