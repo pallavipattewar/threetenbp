@@ -41,22 +41,22 @@ pipeline {
 			
 			success  {
 				script {
-				count = 0
+				//count = 0
 				if(count == 0) 
 				{
-					always{
+					//always{
 					junit "**/target/surefire-reports/TEST-TestSuite.xml"
 					println "count in post "+count
-					}
+					//}
 					//log()
                    		 }
 				else
 				{
-					always{
+					//always{
 					junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 					println "count in post "+count
 					//log()
-					}
+					//}
 					
 				}
 					log()
