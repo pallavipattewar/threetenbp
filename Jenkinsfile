@@ -44,17 +44,22 @@ pipeline {
 				int count = demo()
 				if(count == 0) 
 				{
-					"junit "**/target/surefire-reports/TEST-TestSuite.xml""
+					always{
+					junit "**/target/surefire-reports/TEST-TestSuite.xml"
 					println "count in post "+count
-					log()
+					}
+					//log()
                    		 }
 				else
 				{
-					"junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml""
+					always{
+					junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 					println "count in post "+count
-					log()
+					//log()
+					}
 					
 				}
+					log()
 				}
 			}
 			  
