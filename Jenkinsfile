@@ -33,8 +33,8 @@ pipeline {
 		post{
 			
                           always{
-                              	junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
-			//	  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+                              //	junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
+				  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				log()
                         
                        }
