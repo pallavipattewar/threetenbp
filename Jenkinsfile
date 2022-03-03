@@ -32,37 +32,14 @@ pipeline {
 		}
 		post{
 			
-                          //always{
-                              	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
+                          always{
+                              	junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
 			//	  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-			//	log()
+				log()
                         
-                       //}
+                       }
 			
-			success  {
-				script {
-				//count = 0
-				if(count == 0) 
-				{
-					//always{
-					junit "**/target/surefire-reports/TEST-TestSuite.xml"
-					println "count in post "+count
-					//}
-					//log()
-                   		 }
-				else
-				{
-					//always{
-					junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-					println "count in post "+count
-					//log()
-					//}
-					
-				}
-					log()
-				}
-			}
-			  
+			 
 	}
     }
 }
