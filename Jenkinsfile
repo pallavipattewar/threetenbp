@@ -42,7 +42,7 @@ pipeline {
 			
 			success  {
 				script {
-				int count = demo()
+				count = demo()
 				if(count == 0) 
 				{
 					junit "**/target/surefire-reports/TEST-TestSuite.xml"
