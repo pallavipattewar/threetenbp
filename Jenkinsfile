@@ -52,7 +52,7 @@ def log(){
 	    int fail = XMLDATA.attribute("failures")
 	    int success = (total - fail)
 	    
-	    def newFile = new File("D:\\\ThreeTenBp.csv")
+	    def newFile = new File("D:\\ThreeTenBp.csv")
 	    newFile.append(",${XMLDATA.attribute("tests")}, ${success}, ${XMLDATA.attribute("failures")}")
 }
 }
