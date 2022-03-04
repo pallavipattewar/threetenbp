@@ -30,7 +30,7 @@ pipeline {
 			
                           always{
 				  script{
-					  count = 0
+				
 					  
 				  if(count == 0) 
 				  {
@@ -53,14 +53,14 @@ pipeline {
 def log(){
 	
 	//count = 0
-	//if(count == 0)
-	//{
+	if(count == 0)
+	{
 		def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
-	//}
-	//else
-	//{
-		//def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
-	//}
+	}
+	else
+	{
+		def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+	}
 	
 	
     
