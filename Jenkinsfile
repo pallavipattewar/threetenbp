@@ -12,8 +12,8 @@ pipeline {
                 stage('Testing Stage') {
 		steps {
 			script {
-				//int count = demo()
-				int count = 4
+				int count = demo()
+				//int count = 4
 				
 				if(count == 0) 
 				{
