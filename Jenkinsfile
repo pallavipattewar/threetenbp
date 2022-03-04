@@ -1,3 +1,4 @@
+int count
 pipeline {
     agent any
     stages {
@@ -11,7 +12,7 @@ pipeline {
                 stage('Testing Stage') {
 		steps {
 			script {
-				def count = demo()
+				count = demo()
 				
 				if(count == 0) 
 				{
