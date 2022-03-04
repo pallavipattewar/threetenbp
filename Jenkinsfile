@@ -1,4 +1,3 @@
-def name;
 pipeline {
     agent any
     stages {
