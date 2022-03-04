@@ -55,9 +55,10 @@ pipeline {
 def log(){
 	
 	def inputFile
-	println "count in log"+count
 	
-	if(count == 0)
+	int countlog=0
+	println "count in log"+countlog
+	if(countlog == 0)
 	{
 		 inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
 	}
