@@ -12,7 +12,7 @@ pipeline {
                 stage('Testing Stage') {
 		steps {
 			script {
-				count = demo()
+				count = 0
 				
 				if(count == 0) 
 				{
@@ -30,6 +30,7 @@ pipeline {
 			
                           always{
 				  script{
+					  count = 0
 					  
 				  if(count == 0) 
 				  {
@@ -50,6 +51,7 @@ pipeline {
 
 def log(){
 	
+	count = 0
 	if(count == 0)
 	{
 		def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
