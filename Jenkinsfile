@@ -1,4 +1,4 @@
-def name;
+int count
 pipeline {
     agent any
     stages {
@@ -12,7 +12,7 @@ pipeline {
                 stage('Testing Stage') {
 		steps {
 			script {
-				int count = demo()
+				count = demo()
 				//int count = 4
 				
 				if(count == 0) 
@@ -23,7 +23,7 @@ pipeline {
 				else
 				{
 					//bat "mvn test -Dtest=!"org.threeten.bp.TestTrial""
-					bat "mvn test -Dtest=TestTrial"
+					bat "mvn test -Dtest=!TestTrial"
 					
 				}
 			}
@@ -32,9 +32,20 @@ pipeline {
 		post{
 			
                           always{
-                              	//junit "**/target/surefire-reports/TEST-org.joda.time.TestAllPackages.xml"
-				  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+				  script{
+				  if(count == 0) 
+				  {
+				  	junit "**/target/surefire-reports/TEST-TestSuite.xml"
+				  	
+                       		  }
+				  else
+				  {
+					  //junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
+				  }
+                              	
 				log()
+				  }
                         
                        }
 	}
@@ -45,7 +56,22 @@ pipeline {
 
 def log(){
 	
-    def inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+	def inputFile
+	
+					//int countlog=0
+					println "count in log"+count
+					if(count == 0)
+					{
+		 				inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")	
+					}
+					else
+					{
+						inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+						// inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+					}
+
+	
+    def inputFile = new File()
     def XMLDATA  = new XmlParser().parse(inputFile)
     if(!inputFile.exists())
     {
