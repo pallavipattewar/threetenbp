@@ -71,7 +71,7 @@ def log(){
 					}
 
 	
-    def inputFile = new File()
+   // def inputFile = new File()
     def XMLDATA  = new XmlParser().parse(inputFile)
     if(!inputFile.exists())
     {
