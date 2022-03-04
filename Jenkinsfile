@@ -44,6 +44,8 @@ pipeline {
 					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				  }
 					  
+					  method {
+					  
 				def log(){
 	
 					def inputFile
@@ -80,6 +82,7 @@ pipeline {
 	    						newFile.append(",${XMLDATA.attribute("tests")}, ${success}, ${XMLDATA.attribute("failures")}")
 					}
 }
+					  }
 				  
 				  }
 				   //log()
