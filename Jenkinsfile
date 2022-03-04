@@ -44,8 +44,9 @@ pipeline {
 					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				  }
                               	
-				log()
+				
 				  }
+				  log()
                         
                        }
 	}
