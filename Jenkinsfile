@@ -35,16 +35,15 @@ pipeline {
 				  if(count == 0) 
 				  {
 				  	junit "**/target/surefire-reports/TEST-TestSuite.xml"
-					 log()
 				  	
                        		  }
 				  else
 				  {
 					  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-					  log()
 				  }
 				  
 				  }
+				   log()
 			  }
 		}
     		}
