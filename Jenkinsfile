@@ -16,7 +16,7 @@ pipeline {
 				
 				if(count == 0) 
 				{
-					bat "mvn test -Dtest=TestTrial"
+					bat "mvn test -Dtest=!TestTrial"
                    		 }
 				else
 				{
@@ -29,9 +29,17 @@ pipeline {
 		post{
 			
                           always{
-				  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+				  if(count == 0) 
+				  {
+				  	junit "**/target/surefire-reports/TEST-TestSuite.xml"
+				  	
+                       		  }
+				  else
+				  {
+					  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+				  }
 				  log()
-                       		}
+			  }
 		}
     		}
 	}
@@ -39,7 +47,17 @@ pipeline {
 
 def log(){
 	
-    def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+	if(count == 0)
+	{
+		def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
+	}
+	else
+	{
+		def inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+	}
+	
+	
+    
     def XMLDATA  = new XmlParser().parse(inputFile)
     if(!inputFile.exists())
     {
