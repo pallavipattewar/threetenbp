@@ -43,51 +43,53 @@ pipeline {
 					  //junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				  }
+					  
+				def log(){
+	
+					def inputFile
+	
+					int countlog=0
+					println "count in log"+countlog
+					if(countlog == 0)
+					{
+		 				inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
+					}
+					else
+					{
+						inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")
+						// inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+					}
+
+	
+	
+	
+    
+    					def XMLDATA  = new XmlParser().parse(inputFile)
+   					 if(!inputFile.exists())
+   					 {
+      						 println "file not found"
+    					}
+    					else
+   					 {
+        						//Read and parse XML file and store it into a variable
+	   						 int total= XMLDATA.attribute("tests")
+	   						 int fail = XMLDATA.attribute("failures")
+	   						 int success = (total - fail)
+	    
+	    						def newFile = new File("D:\\ThreeTenBp.csv")
+	    						newFile.append(",${XMLDATA.attribute("tests")}, ${success}, ${XMLDATA.attribute("failures")}")
+					}
+}
 				  
 				  }
-				   log()
+				   //log()
 			  }
 		}
     		}
 	}
 }
 
-def log(){
-	
-	def inputFile
-	
-	int countlog=0
-	println "count in log"+countlog
-	if(countlog == 0)
-	{
-		 inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
-	}
-	else
-	{
-		inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")
-		// inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
-	}
 
-	
-	
-	
-    
-    def XMLDATA  = new XmlParser().parse(inputFile)
-    if(!inputFile.exists())
-    {
-       println "file not found"
-    }
-    else
-    {
-        //Read and parse XML file and store it into a variable
-	    int total= XMLDATA.attribute("tests")
-	    int fail = XMLDATA.attribute("failures")
-	    int success = (total - fail)
-	    
-	    def newFile = new File("D:\\ThreeTenBp.csv")
-	    newFile.append(",${XMLDATA.attribute("tests")}, ${success}, ${XMLDATA.attribute("failures")}")
-}
-}
 def demo(){
     def commitCode = bat (script: 'git log --format=format:"%%H"', returnStdout: true).trim()
     String[] hashCode = null;
