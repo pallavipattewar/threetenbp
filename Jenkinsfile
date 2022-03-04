@@ -29,6 +29,8 @@ pipeline {
 		post{
 			
                           always{
+				  script{
+					  
 				  if(count == 0) 
 				  {
 				  	junit "**/target/surefire-reports/TEST-TestSuite.xml"
@@ -39,6 +41,7 @@ pipeline {
 					  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 				  }
 				  log()
+				  }
 			  }
 		}
     		}
