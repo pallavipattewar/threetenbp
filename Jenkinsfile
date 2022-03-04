@@ -44,7 +44,13 @@ pipeline {
 					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				  }
 					  
-					  method {
+
+				   //log()
+			  }
+		}
+    		}
+	}
+						  method {
 					  
 				def log(){
 	
@@ -85,11 +91,6 @@ pipeline {
 					  }
 				  
 				  }
-				   //log()
-			  }
-		}
-    		}
-	}
 }
 
 
