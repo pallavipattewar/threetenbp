@@ -13,6 +13,7 @@ pipeline {
 		steps {
 			script {
 				count = 0
+				println "count in script"+count
 				
 				if(count == 0) 
 				{
@@ -31,7 +32,7 @@ pipeline {
                           always{
 				  script{
 				
-					  
+				println "count in post"+count
 				  if(count == 0) 
 				  {
 				  	junit "**/target/surefire-reports/TEST-TestSuite.xml"
