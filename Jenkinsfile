@@ -12,7 +12,7 @@ pipeline {
                 stage('Testing Stage') {
 		steps {
 			script {
-				count = 0
+				count = demo()
 				println "count in script"+count
 				
 				if(count == 0) 
@@ -21,7 +21,7 @@ pipeline {
                    		 }
 				else
 				{
-					bat "mvn test -Dtest=TestTrial"
+					bat "mvn test -Dtest=!TestTrial"
 					
 				}
 			}
@@ -40,7 +40,8 @@ pipeline {
                        		  }
 				  else
 				  {
-					  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					  //junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				  }
 				  
 				  }
@@ -52,16 +53,21 @@ pipeline {
 }
 
 def log(){
+	
 	def inputFile
-	int countdef = 0
-	if(countdef == 0)
+	println "count in log"+count
+	
+	if(count == 0)
 	{
 		 inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
 	}
 	else
 	{
-		 inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+		inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")
+		// inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
 	}
+
+	
 	
 	
     
