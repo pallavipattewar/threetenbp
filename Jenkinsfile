@@ -72,7 +72,7 @@ def demo(){
     def firstCommit = hashCode[n1+1]
     def secondCommit = hashCode[n2+1]
 	
-    	def result = bat (script: "git diff $firstCommit $secondCommit| grep ^+",returnStdout: true).trim()
+    	def result = bat (script: "git diff -a -m $firstCommit $secondCommit",returnStdout: true).trim()
 	def a = result.replaceAll("//.*|/\\*((.|\\n)(?!=*/))+\\*/", "")
 	def s = a.replaceAll("[^a-zA-Z0-9 ]+"," ")
 	def t = s.replaceAll(/\s+/, ' ')
