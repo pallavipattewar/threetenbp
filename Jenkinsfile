@@ -90,7 +90,6 @@ def log()
 					}
 }
 					  
-
 def demo(){
     def commitCode = bat (script: 'git log --format=format:"%%H"', returnStdout: true).trim()
     String[] hashCode = null;
