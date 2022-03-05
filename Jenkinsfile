@@ -61,7 +61,7 @@ def log()
 					def inputFile
 	
 					
-					println "count in log"+countlog
+					println "count in log"+count
 					if(count == 0)
 					{
 		 				inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
