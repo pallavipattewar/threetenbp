@@ -1,4 +1,4 @@
-
+int count
 pipeline {
     agent any
     stages {
@@ -60,9 +60,9 @@ def log()
 	
 					def inputFile
 	
-					int countlog = count
+					
 					println "count in log"+countlog
-					if(countlog == 0)
+					if(count == 0)
 					{
 		 				inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
 					}
