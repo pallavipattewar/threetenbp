@@ -43,6 +43,7 @@ pipeline {
 				  else
 				  {
 					  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					                                    //TEST-org.threeten.bp.TestTrial
 					  //junit "**/target/surefire-reports/TEST-TestSuite.xml"
 				  }
                               	
@@ -71,6 +72,7 @@ def log(){
 					{
 						//inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-TestSuite.xml")
 						inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+						                                                                                                   
 					}
 
 	
