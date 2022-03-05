@@ -21,7 +21,7 @@ pipeline {
                    		 }
 				else
 				{
-					bat "mvn test -Dtest=!TestTrial"
+					bat "mvn test -Dtest=TestTrial"
 					
 				}
 			}
@@ -40,36 +40,37 @@ pipeline {
                        		  }
 				  else
 				  {
-					  //junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-					  junit "**/target/surefire-reports/TEST-TestSuite.xml"
+					 junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
+					  
 				  }
 					  
 
-				   //log()
-			  }
-		}
+				   
+			  		}
+				  	log()
+				}
     		}
+		}
+				  
 	}
-						  method {
-					  
-				def log(){
+}
+
+def log()
+{
 	
 					def inputFile
 	
-					//int countlog=0
-					println "count in log"+count
-					if(count == 0)
+					int countlog = count
+					println "count in log"+countlog
+					if(countlog == 0)
 					{
 		 				inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")	
 					}
 					else
 					{
-						inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-TestSuite.xml")
-						// inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+				
+						 inputFile = new File("C:\\Windows\\System32\\config\\systemprofile\\AppData\\Local\\Jenkins\\.jenkins\\workspace\\ThreeTenB\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
 					}
-
-	
-	
 	
     
     					def XMLDATA  = new XmlParser().parse(inputFile)
@@ -88,11 +89,7 @@ pipeline {
 	    						newFile.append(",${XMLDATA.attribute("tests")}, ${success}, ${XMLDATA.attribute("failures")}")
 					}
 }
-					  }
-				  
-				  }
-}
-
+					  
 
 def demo(){
     def commitCode = bat (script: 'git log --format=format:"%%H"', returnStdout: true).trim()
