@@ -115,7 +115,7 @@ def demo(){
     String diff = p.toString().toLowerCase()
     String[] diffArray = null;
     String[] keywords = ["runtime", "new", "gc", "system"];
-    int count =0;
+     count =0;
 	
 	        diffArray = diff.split(" ");
 	        for(int i=0 ;i< diffArray.length ;i++) {
