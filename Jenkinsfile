@@ -113,7 +113,8 @@ def demo(){
     String diff = p.toString().toLowerCase()
     String[] diffArray = null;
     String[] keywords = ["runtime", "new", "gc", "system"];
-    int keywordCount =0;
+   // int keywordCount =0;
+	count =0;
 	
 	        diffArray = diff.split(" ");
 	        for(int i=0 ;i< diffArray.length ;i++) {
@@ -121,7 +122,7 @@ def demo(){
 	        	{
 	        	 if((diffArray[i].equals(keywords[j])))
 	        	{
-	        		keywordCount++;
+	        		count++;
 	        	}
 	        }
 	        }
@@ -139,7 +140,7 @@ def currentHashcode = bat (script: '@git log -1 --pretty=%%H',returnStdout: true
 	// for print code change category
 	def codeChangeCategory 
 	def testCaseType
-	if(keywordCount == 0)
+	if(count == 0)
 	{
 		codeChangeCategory = "Functional"
 		testCaseType = "Functional Test"
@@ -153,7 +154,8 @@ def currentHashcode = bat (script: '@git log -1 --pretty=%%H',returnStdout: true
 	newFile.append("\n")
 	newFile.append("${currentHashcode}, ${firstCommit}, ${secondCommit}, ${p}, ${codeChangeCategory}, ${testCaseType}")
 	//csv code end
-	println "count below"+keywordCount
-	       return keywordCount
+	println "count below"+count
+	      // return keywordCount
+	return count
 }
 
