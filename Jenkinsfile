@@ -24,7 +24,7 @@ pipeline {
 				else
 				{
 					//bat "mvn test -Dtest=!"org.threeten.bp.TestTrial""
-					bat "mvn test -Dtest = TestTrial"
+					bat "mvn test -Dtest=TestTrial"
 					
 				}
 			}
