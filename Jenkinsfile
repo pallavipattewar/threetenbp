@@ -1,4 +1,4 @@
-int count
+
 pipeline {
     agent any
     stages {
