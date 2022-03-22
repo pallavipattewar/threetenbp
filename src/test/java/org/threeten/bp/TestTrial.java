@@ -17,7 +17,7 @@ public class TestTrial {
 		
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 23771100);
+		Assert.assertTrue((end - start) >= 27929381);
 	}
 	
 	@Test
@@ -30,7 +30,7 @@ public class TestTrial {
 		
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 3447400);
+		Assert.assertTrue((end - start) >= 3221318);
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 2148100);
+		Assert.assertTrue((end - start) >= 2568900);
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 105970500);
+		Assert.assertTrue((end - start) >= 105198581);
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 16549200);
+		Assert.assertTrue((end - start) >= 17368209);
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 2104200);
+		Assert.assertTrue((end - start) >= 1590254);
 	}
 	
 	@Test
@@ -91,7 +91,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 1123700);
+		Assert.assertTrue((end - start) >= 1839390);
 	}
 	
 	@Test
@@ -103,7 +103,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 663300);
+		Assert.assertTrue((end - start) >= 1087118);
 	}
 	
 	@Test
@@ -115,7 +115,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 787800);
+		Assert.assertTrue((end - start) >= 1322181);
 	}
 	
 	@Test
@@ -127,7 +127,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 638200);
+		Assert.assertTrue((end - start) >= 902609);
 	}
 	
 	@Test
@@ -139,7 +139,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 655800);
+		Assert.assertTrue((end - start) >= 607145);
 	}
 	
 	@Test
@@ -151,7 +151,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 952300);
+		Assert.assertTrue((end - start) >= 1231318);
 	}
 	
 	@Test
@@ -167,7 +167,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 557900);
+		Assert.assertTrue((end - start) >= 755181);
 	}
 	
 	@Test
@@ -182,7 +182,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 901800);
+		Assert.assertTrue((end - start) >= 2114790);
 	}
 	
 	@Test
@@ -197,6 +197,6 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 733200);
+		Assert.assertTrue((end - start) >= 668163);
 	}
 }
