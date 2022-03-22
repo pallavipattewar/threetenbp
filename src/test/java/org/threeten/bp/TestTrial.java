@@ -15,7 +15,9 @@ public class TestTrial {
 		}
 		long end = System.nanoTime();
 		
-		Assert.assertTrue((end - start) >= 10000);
+		System.out.println(end-start);
+		
+		Assert.assertTrue((end - start) >= 23771100);
 	}
 	
 	@Test
@@ -26,7 +28,9 @@ public class TestTrial {
 		}
 		long end = System.nanoTime();
 		
-		Assert.assertTrue((end - start) >= 10000);
+		System.out.println(end-start);
+		
+		Assert.assertTrue((end - start) >= 3447400);
 	}
 	
 	@Test
@@ -36,8 +40,9 @@ public class TestTrial {
 			Duration.ofHours(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 2148100);
 	}
 	
 	@Test
@@ -47,8 +52,9 @@ public class TestTrial {
 			Duration.ofMillis(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 105970500);
 	}
 	
 	@Test
@@ -56,10 +62,12 @@ public class TestTrial {
 		long start = System.nanoTime();
 		for (int k = 0; k < size; k++) {
 			Duration.ofMinutes(k);
+			
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 16549200);
 	}
 	
 	@Test
@@ -69,8 +77,9 @@ public class TestTrial {
 			Duration.ofNanos(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 2104200);
 	}
 	
 	@Test
@@ -80,8 +89,9 @@ public class TestTrial {
 			Duration.ofSeconds(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 1123700);
 	}
 	
 	@Test
@@ -91,8 +101,9 @@ public class TestTrial {
 			Period.ofDays(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 663300);
 	}
 	
 	@Test
@@ -102,8 +113,9 @@ public class TestTrial {
 			Period.ofMonths(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 787800);
 	}
 	
 	@Test
@@ -113,8 +125,9 @@ public class TestTrial {
 			Period.ofWeeks(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 638200);
 	}
 	
 	@Test
@@ -124,8 +137,9 @@ public class TestTrial {
 			Period.ofYears(k);
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 655800);
 	}
 	
 	@Test
@@ -135,8 +149,9 @@ public class TestTrial {
 			LocalDate.now();
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 952300);
 	}
 	
 	@Test
@@ -150,8 +165,9 @@ public class TestTrial {
 			year++;
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 557900);
 	}
 	
 	@Test
@@ -164,8 +180,9 @@ public class TestTrial {
 			year++;
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 901800);
 	}
 	
 	@Test
@@ -178,7 +195,8 @@ public class TestTrial {
 			minute++;
 		}
 		long end = System.nanoTime();
+		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 10000);
+		Assert.assertTrue((end - start) >= 733200);
 	}
 }
