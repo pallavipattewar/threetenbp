@@ -17,7 +17,7 @@ public class TestTrial {
 		
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 27929381);
+		Assert.assertTrue((end - start) <= 27929381);
 	}
 	
 	@Test
@@ -30,7 +30,7 @@ public class TestTrial {
 		
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 3221318);
+		Assert.assertTrue((end - start) <= 3221318);
 	}
 	
 	@Test
@@ -42,7 +42,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 2568900);
+		Assert.assertTrue((end - start) <= 2568900);
 	}
 	
 	@Test
@@ -54,7 +54,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 105198581);
+		Assert.assertTrue((end - start) <= 105198581);
 	}
 	
 	@Test
@@ -67,7 +67,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 17368209);
+		Assert.assertTrue((end - start) <= 17368209);
 	}
 	
 	@Test
@@ -79,7 +79,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 1590254);
+		Assert.assertTrue((end - start) <= 1590254);
 	}
 	
 	@Test
@@ -91,7 +91,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 1839390);
+		Assert.assertTrue((end - start) <= 1839390);
 	}
 	
 	@Test
@@ -103,7 +103,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 1087118);
+		Assert.assertTrue((end - start) <= 1087118);
 	}
 	
 	@Test
@@ -115,7 +115,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 1322181);
+		Assert.assertTrue((end - start) <= 1322181);
 	}
 	
 	@Test
@@ -127,7 +127,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 902609);
+		Assert.assertTrue((end - start) <= 902609);
 	}
 	
 	@Test
@@ -139,7 +139,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 607145);
+		Assert.assertTrue((end - start) <= 607145);
 	}
 	
 	@Test
@@ -151,7 +151,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 1231318);
+		Assert.assertTrue((end - start) <= 1231318);
 	}
 	
 	@Test
@@ -167,7 +167,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 755181);
+		Assert.assertTrue((end - start) <= 755181);
 	}
 	
 	@Test
@@ -182,7 +182,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 2114790);
+		Assert.assertTrue((end - start) <= 2114790);
 	}
 	
 	@Test
@@ -197,7 +197,7 @@ public class TestTrial {
 		long end = System.nanoTime();
 		System.out.println(end-start);
 		
-		Assert.assertTrue((end - start) >= 668163);
+		Assert.assertTrue((end - start) <= 668163);
 	}
 	
 	// Memory usage Test cases
@@ -210,7 +210,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to test_NowMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 4194304);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 4194304);
 	}
 	
 	
@@ -222,7 +222,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofHoursMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336);
 	}
 	
 	
@@ -234,7 +234,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofMinutesMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336);
 	}
 	
 	@Test
@@ -245,7 +245,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofNanosMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336);
 	}
 	
 	@Test
@@ -256,7 +256,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofSecondsMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336 );
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336 );
 	}
 	
 	@Test
@@ -267,7 +267,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofDays1Mem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 522240);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 522240);
 	}
 	
 	@Test
@@ -278,7 +278,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofMonthsMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336);
 	}
 	
 	@Test
@@ -289,7 +289,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofWeeksMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 522240);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 522240);
 	}
 	
 	@Test
@@ -300,7 +300,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get test_ofYearsMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336);
 	}
 	
 	@Test
@@ -314,7 +314,7 @@ public class TestTrial {
 		}
 		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
 		System.out.println("Memory Used to get testLocalDate_ofYearDayMem:"+ (afterUsedMem- beforeUsedMem));
-		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)<= 526336);
 	}
 	
 }
