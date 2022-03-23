@@ -181,4 +181,122 @@ public class TestTrial {
 		
 		Assert.assertTrue((end - start) >= 10000);
 	}
+	
+	// Memory usage Test cases
+	
+	@Test
+	public void test_NowMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Year.now();
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to test_NowMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 4194304);
+	}
+	
+	
+	@Test
+	public void test_ofHoursMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Duration.ofHours(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofHoursMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+	}
+	
+	
+	@Test
+	public void test_ofMinutesMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Duration.ofMinutes(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofMinutesMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+	}
+	
+	@Test
+	public void test_ofNanosMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Duration.ofNanos(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofNanosMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+	}
+	
+	@Test
+	public void test_ofSecondsMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Duration.ofSeconds(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofSecondsMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336 );
+	}
+	
+	@Test
+	public void test_ofDays1Mem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Period.ofDays(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofDays1Mem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 522240);
+	}
+	
+	@Test
+	public void test_ofMonthsMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Period.ofMonths(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofMonthsMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+	}
+	
+	@Test
+	public void test_ofWeeksMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Period.ofWeeks(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofWeeksMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 522240);
+	}
+	
+	@Test
+	public void test_ofYearsMem() {
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			Period.ofYears(k);
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get test_ofYearsMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+	}
+	
+	@Test
+	public void testLocalDate_ofYearDayMem() {
+		int year = 2020;
+		int dayOfYear = 10;
+		long beforeUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		for (int k = 0; k < size; k++) {
+			LocalDate.ofYearDay(year, dayOfYear);
+			year++;
+		}
+		long afterUsedMem=Runtime.getRuntime().totalMemory()-Runtime.getRuntime().freeMemory();
+		System.out.println("Memory Used to get testLocalDate_ofYearDayMem:"+ (afterUsedMem- beforeUsedMem));
+		Assert.assertTrue((afterUsedMem - beforeUsedMem)>= 526336);
+	}
+	
 }
