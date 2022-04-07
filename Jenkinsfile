@@ -18,13 +18,11 @@ pipeline {
 				
 				if(count == 0) 
 				{
-					//bat "mvn test -Dtest="org.threeten.bp.TestTrial""
 					bat "mvn test -Dtest=!TestTrial"
                    		 }
 				else
 				{
-					//bat "mvn test -Dtest=!"org.threeten.bp.TestTrial""
-					bat "mvn test -Dtest=TestTrial"
+				        bat "mvn test -Dtest=TestTrial"
 					
 				}
 			}
@@ -42,9 +40,7 @@ pipeline {
                        		  }
 				  else
 				  {
-					  junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
-					                                    //TEST-org.threeten.bp.TestTrial
-					  //junit "**/target/surefire-reports/TEST-TestSuite.xml"
+					junit "**/target/surefire-reports/TEST-org.threeten.bp.TestTrial.xml"
 				  }
                               	
 				
@@ -61,22 +57,15 @@ pipeline {
 def log(){
 	
 	def inputFile
-	
-					//int countlog=0
-					println "count in log"+count
-					if(count == 0)
-					{
-		 				inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-TestSuite.xml")	
-					}
-					else
-					{
-						//inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-TestSuite.xml")
-						inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
-						                                                                                                   
-					}
+	if(count == 0)
+	{
+             inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-TestSuite.xml")	
+	}
+        else
+        {
+	     inputFile = new File("C:\\Users\\palla\\.jenkins\\workspace\\ThreeTenBP\\target\\surefire-reports\\TEST-org.threeten.bp.TestTrial.xml")
+	}
 
-	
-   // def inputFile = new File()
     def XMLDATA  = new XmlParser().parse(inputFile)
     if(!inputFile.exists())
     {
@@ -117,8 +106,7 @@ def demo(){
     String diff = p.toString().toLowerCase()
     String[] diffArray = null;
     String[] keywords = ["runtime", "new", "gc", "system"];
-   // int keywordCount =0;
-	count =0;
+  	count =0;
 	
 	        diffArray = diff.split(" ");
 	        for(int i=0 ;i< diffArray.length ;i++) {
@@ -159,7 +147,6 @@ def currentHashcode = bat (script: '@git log -1 --pretty=%%H',returnStdout: true
 	newFile.append("${currentHashcode}, ${firstCommit}, ${secondCommit}, ${p}, ${codeChangeCategory}, ${testCaseType}")
 	//csv code end
 	println "count below"+count
-	      // return keywordCount
 	return count
 }
 
